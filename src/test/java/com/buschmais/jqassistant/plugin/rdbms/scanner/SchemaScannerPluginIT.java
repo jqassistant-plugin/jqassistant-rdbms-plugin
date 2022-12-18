@@ -59,6 +59,8 @@ class SchemaScannerPluginIT extends AbstractPluginIT {
             execute(c, "drop view if exists PERSON_VIEW");
             execute(c, "drop table if exists PERSON");
             execute(c, "create table PERSON(a decimal(10,5), b decimal(5,2), c varchar(255) default 'defaultValue')");
+            execute(c, "comment on table PERSON is 'table comment'");
+            execute(c, "comment on column PERSON.a is 'column comment'");
             execute(c, "alter table PERSON add constraint PK_PERSON primary key (A,B)");
             execute(c, "create table ADDRESS(PERSON_A decimal(10,5), PERSON_B decimal(5,2))");
             execute(c, "alter table ADDRESS add constraint FK_ADDRESS_PERSON foreign key (PERSON_A,PERSON_B) references PERSON(A,B)");
@@ -185,6 +187,7 @@ class SchemaScannerPluginIT extends AbstractPluginIT {
         TableDescriptor person = getTableOrView(TABLE_PERSON);
         assertThat(schemaDescriptor.getTables(), hasItem(person));
         assertThat(person.getName(), equalTo(TABLE_PERSON));
+        assertThat(person.getComment(), equalTo("table comment"));
         // Verify column A
         ColumnDescriptor a = getColumn(TABLE_PERSON, COLUMN_A);
         assertThat(a.getName(), equalTo(COLUMN_A));
@@ -196,6 +199,7 @@ class SchemaScannerPluginIT extends AbstractPluginIT {
         assertThat(a.isPartOfPrimaryKey(), equalTo(true));
         assertThat(a.isPartOfIndex(), equalTo(true));
         assertThat(a.isPartOfForeignKey(), equalTo(false));
+        assertThat(a.getComment(), equalTo("column comment"));
         assertThat(person.getColumns(), hasItem(a));
         // Verify column B
         ColumnDescriptor b = getColumn(TABLE_PERSON, COLUMN_B);
