@@ -9,3 +9,21 @@ artifacts like:
 - ...
 
 For more information on jQAssistant see https://jqassistant.org[^].
+
+== Using the jqassistant-rdbms-plugin
+
+NOTE:: Starting from jqassistant-rdbms-plugin v2.0.0, the RDBMS-Plugin resides under jqassistant-plugin.
+Therefore, not only the repository location changed but also group id and artifact id were adapted from `com.buschmais.jqassistant.plugin:rdbms` to `org.jqassistant.plugin:jqassistant-rdbms-plugin`.
+
+NOTE:: From jQAssistant v2.0.0 onwards, it is not part of the core distribution anymore and a manual configuration as shown below is required.
+
+[source, yaml]
+----
+jqassistant:
+  plugins:
+    - group-id: org.jqassistant.plugin <1>
+      artifact-id: jqassistant-rdbms-plugin
+      version: ${jqassistant.rdbms-plugin.version}
+----
+<1> Dependency to the RDBMS plugin
+
