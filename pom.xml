@@ -56,7 +56,6 @@
 
 
 	<properties>
-        <jqa-plugin-common.version>2.0.0</jqa-plugin-common.version>
 		<us.fatehi.schemacrawler.version>11.02.01</us.fatehi.schemacrawler.version>
 	</properties>
 
@@ -210,7 +209,6 @@
             <groupId>com.buschmais.jqassistant.plugin</groupId>
             <artifactId>common</artifactId>
             <type>test-jar</type>
-            <version>${jqa-plugin-common.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
