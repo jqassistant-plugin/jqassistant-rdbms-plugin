@@ -1,5 +1,5 @@
 [[SchemaScanner]]
-== Scanner for metadata of a relational database schema
+== Metadata of a relational database schema
 Imports the metadata of a relational database schema, i.e. schemas, tables and columns.
 
 *NOTE* The JDBC driver must be available on the jQAssistant classpath, e.g.
