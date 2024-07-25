@@ -1,0 +1,64 @@
+= jQAssistant RDBMS Plugin
+
+This is the RDBMS Plugin of https://jqassistant.org[jQAssistant^].
+It enables jQAssistant to scan and to analyze RDBMS related
+artifacts like:
+
+- tables
+- columns
+- ...
+
+For more information on jQAssistant see https://jqassistant.org[^].
+
+== Available Scanners
+
+- link:src/main/asciidoc/scanner.adoc#metadata-of-a-relational-database-schema[persistence.xml]
+
+== Using the jqassistant-rdbms-plugin
+
+NOTE:: Starting from jqassistant-rdbms-plugin v2.0.0, the RDBMS-Plugin resides under jqassistant-plugin.
+Therefore, not only the repository location changed but also group id and artifact id were adapted from `com.buschmais.jqassistant.plugin:rdbms` to `org.jqassistant.plugin:jqassistant-rdbms-plugin`.
+
+NOTE:: From jQAssistant v2.0.0 onwards, it is not part of the core distribution anymore and a manual configuration as shown below is required.
+
+[source, yaml]
+----
+jqassistant:
+  plugins:
+    - group-id: org.jqassistant.plugin <1>
+      artifact-id: jqassistant-rdbms-plugin
+      version: ${jqassistant.rdbms-plugin.version}
+----
+<1> Dependency to the RDBMS plugin
+
+== Changelog
+
+=== 2.0.0
+
+* Moved Plugin from com.buschmais.jqassistant.plugin (core-Distribution) to org.jqassistant.plugin
+
+=== 1.9.0
+
+* Method `createSchemas(Catalog, Store)` of `com.buschmais.jqassistant.plugin.rdbms.impl.scanner.AbstractSchemaScannerPlugin`
+is now protected. This change allows users to create a customized
+variant of this plugin.
+You can find https://github.com/jQAssistant/jqa-rdbms-plugin/pull/3[the corresponding PR here^].
+
+=== 1.6.0
+
+* Fixed a problem in the documentation of the RDBMS scanner plugin,
+the file providing the database connection properties must be
+prefixed with `jqassistant.plugin.rdbms`.
+
+=== 1.3
+
+* Only internal changes.
+
+=== 1.2
+
+* Maven coordinates changed from `com.buschmais.jqassistant.plugin:jqassistant.plugin.rdbms`
+to `com.buschmais.jqassistant.plugin:rdbms`.
+* No functional changes since version 1.1.3.
+
+
+

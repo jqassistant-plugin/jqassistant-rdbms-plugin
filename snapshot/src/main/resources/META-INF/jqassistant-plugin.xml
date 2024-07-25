@@ -1,0 +1,35 @@
+<jqassistant-plugin xmlns="http://schema.jqassistant.org/plugin/v1.10"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://schema.jqassistant.org/plugin/v1.10 https://schema.jqassistant.org/plugin/jqassistant-plugin-v1.10.xsd"
+                    name="jQAssistant RDBMS Plugin" id="jqa.plugin.rdbms"
+                    version="${project.version}">
+    <description>Provides a scanner for importing the metadata of a relational database schema.</description>
+    <model>
+        <class>org.jqassistant.plugin.rdbms.api.model.RdbmsDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ConnectionDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.SchemaDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.TableDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ViewDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ColumnDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ColumnTypeDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.SequenceDesriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.IndexDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.IndexOnColumnDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.PrimaryKeyDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.PrimaryKeyOnColumnDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ForeignKeyDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ForeignKeyReferenceDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.TriggerDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.RoutineDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.FunctionDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.ProcedureDescriptor</class>
+        <class>org.jqassistant.plugin.rdbms.api.model.RoutineColumnDescriptor</class>
+    </model>
+    <scope>
+        <class>org.jqassistant.plugin.rdbms.api.RdbmsScope</class>
+    </scope>
+    <scanner>
+        <class>org.jqassistant.plugin.rdbms.impl.scanner.ConnectionPropertyFileScannerPlugin</class>
+        <class>org.jqassistant.plugin.rdbms.impl.scanner.ConnectionUriScannerPlugin</class>
+    </scanner>
+</jqassistant-plugin>
