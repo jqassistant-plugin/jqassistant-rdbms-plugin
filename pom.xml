@@ -56,7 +56,7 @@
 
 
 	<properties>
-		<us.fatehi.schemacrawler.version>11.02.01</us.fatehi.schemacrawler.version>
+		<us.fatehi.schemacrawler.version>14.03.03</us.fatehi.schemacrawler.version>
 	</properties>
 
     <build>
